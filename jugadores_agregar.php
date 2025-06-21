@@ -37,9 +37,9 @@ include("controlador_clubes/control_clubes_lista.php");
                         <div class="col-md-12">
                             <form action="controlador_jugadores/control_jugadores_agregar.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-md-8">
+                                    <div class="col-md-5">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
 
                                                 <div class="form-group">
                                                     <label for="">CODIGO DE JUGADOR</label>
@@ -61,40 +61,44 @@ include("controlador_clubes/control_clubes_lista.php");
                                                     }
                                                     ?>
                                                     <input type="text" name="codigoJugador" class="form-control" value="<?php echo "C25-".ceros($contador_id_jugadores); ?>">                                    
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-6">
+                                                </div>                                                
+                                            </div>                                            
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">CARNET DE IDENTIDAD</label>
                                                     <input type="text" name="ciJugador" class="form-control" placeholder="Introdusca su Carnet Identidad...">                                    
                                                 </div>
-                                            </div>                                    
+                                            </div>
                                         </div>
-
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">APELLIDO PATERNO</label>
                                                     <input type="text" name="apPaternoJugador" class="form-control" placeholder="Introdusca su Apellido Paterno...">                                    
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6">
+                                            </div>                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">APELLIDO MATERNO</label>
                                                     <input type="text" name="apMaternoJugador" class="form-control" placeholder="Introdusca su Apellido Materno...">                                    
                                                 </div>
                                             </div>
-                                        </div>
-
+                                        </div>                
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">NOMBRES</label>
                                                     <input type="text" name="nombresJugador" class="form-control" placeholder="Introdusca sus Nombres...">                                    
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">CLUB</label>
                                                     <select name="idClub" id="" class="form-control">
@@ -107,10 +111,10 @@ include("controlador_clubes/control_clubes_lista.php");
                                                     </select>
                                                 </div>    
                                             </div>
-                                        </div>                                                                                                      
+                                        </div>           
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-7">
                                         <div class="form-group">
                                             <label for="">IMAGEN DEL JUGADOR</label>
                                             <input type="file" name="image" class="form-control" id="file">
@@ -125,7 +129,7 @@ include("controlador_clubes/control_clubes_lista.php");
                                                        var reader = new FileReader();
                                                        reader.onload = (function (theFile) {
                                                         return function (e) {
-                                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="300px" title="', escape(theFile.name), '"/>'].join('');
+                                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="600px" title="', escape(theFile.name), '"/>'].join('');
                                                         };
                                                        })(f);
                                                        reader.readAsDataURL(f); 
