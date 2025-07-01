@@ -19,20 +19,37 @@ include("controlador_jugadores/control_jugadores_lista.php");
             <div class="dashboard-content-one">
                 <!-- Breadcubs Area Start Here -->
                 <div class="breadcrumbs-area">
-                    <h3>Admin Dashboard</h3>
+                    <h3>LISTA DE JUGADORES - CAMPEONATO 2025</h3>
                     <ul>
                         <li>
-                            <a href="index.html">Inicio</a>
+                            <a href="index.php">Inicio</a>
                         </li>
-                        <li>Jugadores</li>
-                        <li>Lista de Jugadores</li>
+                        <li>
+                            <a href="jugadores_lista.php">Jugadores</a>    
+                        </li>                        
                         <li> <a href="jugadores_agregar.php" <button type="button" class="btn-fill-md radius-30 text-light bg-light-sea-green">AGREGAR<i class="fas fa-cloud-upload-alt mg-l-10"></i></button></a> </li>
                     </ul>
                 </div>
                 <!-- Breadcubs Area End Here -->
 
-                
-
+                <!-- INICIO BARRA DE BUSQUEDA -->
+                    <form class="mg-b-20">
+                        <div class="row gutters-8">
+                                <div class="col-3-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                                    <input type="text" placeholder="Busqueda por CI ..." class="form-control">
+                                </div>
+                                <div class="col-4-xxxl col-xl-4 col-lg-3 col-12 form-group">
+                                    <input type="text" placeholder="Busqueda por Apellido ..." class="form-control">
+                                </div>
+                                <div class="col-4-xxxl col-xl-3 col-lg-3 col-12 form-group">
+                                    <input type="text" placeholder="Busqueda por Nombre ..." class="form-control">
+                                </div>
+                                <div class="col-1-xxxl col-xl-2 col-lg-3 col-12 form-group">
+                                    <button type="submit" class="btn-fill-lmd text-light bg-gradient-gplus">BUSCAR</button>
+                                </div>
+                        </div>
+                    </form>
+                <!-- FIN BARRA DE BUSQUEDA -->    
 
                     <div class="table-responsive">
                             <table class="table display data-table text-nowrap">
@@ -80,7 +97,7 @@ include("controlador_jugadores/control_jugadores_lista.php");
                                             <center>
                                                 <div class="btn-group">
                                                     <a href="jugadores_ver.php?id=<?php echo $jugadores_dato['id_jugador']?>" type="button" class="btn-fill-lmd radius-30 text-light shadow-dodger-blue bg-dodger-blue"><i class="fa fa-eye"></i> VER </a>
-                                                    <button type="button" class="btn-fill-lmd radius-30 text-light shadow-dark-pastel-green bg-dark-pastel-green"><i class="fa fa-pencil-alt"></i> EDITAR </button>
+                                                    <a href="jugadores_editar.php?id=<?php echo $jugadores_dato['id_jugador']?>"type="button" class="btn-fill-lmd radius-30 text-light shadow-dark-pastel-green bg-dark-pastel-green"><i class="fa fa-pencil-alt"></i> EDITAR </a>
                                                     <button type="button" class="btn-fill-lmd radius-30 text-light shadow-orange-peel bg-orange-peel"><i class="fa fa-trash"></i> BORRAR </button>
                                                 </div>
                                             </center>
@@ -111,5 +128,6 @@ include("controlador_jugadores/control_jugadores_lista.php");
 <?php
 include ('Afooter.php');
 ?>
+
 
                 
