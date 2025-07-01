@@ -7,6 +7,7 @@ $appaternojugador = $_POST['apPaternoJugador'];
 $apmaternojugador = $_POST['apMaternoJugador'];
 $nombresjugador = $_POST['nombresJugador'];
 $idclub = $_POST['idClub'];
+$fechanacjugador = $_POST['fechaNacJugador'];
 
 $image = $_POST ['image'];
 $filename = $_FILES['image']['name'];
@@ -15,8 +16,8 @@ $location = "../tarjetas_c25/".$codigojugador.".jpg";
 move_uploaded_file($_FILES['image']['tmp_name'],$location);
 
 
-$sentencia = $pdo->prepare("INSERT INTO jugadores (codigo_jugador, ci_jugador, ap_paterno_jugador, ap_materno_jugador, nombres_jugador, id_club, tarjeta_jugador) 
-VALUES (:codigojugador,:cijugador,:appaternojugador,:apmaternojugador,:nombresjugador,:idclub,:tarjetajugador)");
+$sentencia = $pdo->prepare("INSERT INTO jugadores (codigo_jugador, ci_jugador, ap_paterno_jugador, ap_materno_jugador, nombres_jugador, id_club, tarjeta_jugador, fecha_nac_jugador) 
+VALUES (:codigojugador,:cijugador,:appaternojugador,:apmaternojugador,:nombresjugador,:idclub,:tarjetajugador,:fechanacjugador)");
 
 $sentencia->bindParam('codigojugador', $codigojugador);
 $sentencia->bindParam('cijugador', $cijugador);
@@ -25,6 +26,7 @@ $sentencia->bindParam('apmaternojugador', $apmaternojugador);
 $sentencia->bindParam('nombresjugador', $nombresjugador);
 $sentencia->bindParam('idclub', $idclub);
 $sentencia->bindParam('tarjetajugador', $codigojugador);
+$sentencia->bindParam('fechanacjugador', $fechanacjugador);
 
 $sentencia->execute();
 echo $codigojugador;
