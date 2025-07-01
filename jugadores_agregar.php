@@ -37,10 +37,9 @@ include("controlador_clubes/control_clubes_lista.php");
                         <div class="col-md-12">
                             <form action="controlador_jugadores/control_jugadores_agregar.php" method="post" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row">                                            
                                             <div class="col-md-12">
-
                                                 <div class="form-group">
                                                     <label for="">CODIGO DE JUGADOR</label>
                                                     <?php 
@@ -61,34 +60,37 @@ include("controlador_clubes/control_clubes_lista.php");
                                                     }
                                                     ?>
                                                     <input type="text" name="codigoJugador" class="form-control" value="<?php echo "C25-".ceros($contador_id_jugadores); ?>">                                    
-                                                </div>                                                
-                                            </div>                                            
-                                            
+                                                </div>
+                                            </div>                                          
                                         </div>
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">CARNET DE IDENTIDAD</label>
                                                     <input type="text" name="ciJugador" class="form-control" placeholder="Introdusca su Carnet Identidad...">                                    
                                                 </div>
-                                            </div>
+                                            </div>            
                                         </div>
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">APELLIDO PATERNO</label>
                                                     <input type="text" name="apPaternoJugador" class="form-control" placeholder="Introdusca su Apellido Paterno...">                                    
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                         </div>
-                                        <div class="row">
+
+                                        <div class="row">            
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">APELLIDO MATERNO</label>
                                                     <input type="text" name="apMaternoJugador" class="form-control" placeholder="Introdusca su Apellido Materno...">                                    
                                                 </div>
-                                            </div>
-                                        </div>                
+                                            </div>                                            
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
@@ -97,7 +99,17 @@ include("controlador_clubes/control_clubes_lista.php");
                                                 </div>
                                             </div>
                                         </div>
+                                        
                                         <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="">FECHA NACIMIENTO</label>
+                                                    <input type="date" name="fechaNacJugador" class="form-control" >                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">    
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="">CLUB</label>
@@ -111,10 +123,11 @@ include("controlador_clubes/control_clubes_lista.php");
                                                     </select>
                                                 </div>    
                                             </div>
-                                        </div>           
+                                        </div>
+                                                                                                                                              
                                     </div>
-
-                                    <div class="col-md-7">
+                                                                
+                                    <div class="col-md-8">                                    
                                         <div class="form-group">
                                             <label for="">IMAGEN DEL JUGADOR</label>
                                             <input type="file" name="image" class="form-control" id="file">
@@ -123,30 +136,29 @@ include("controlador_clubes/control_clubes_lista.php");
                                                 function archivo(evt) {
                                                     var files = evt.target.files;
                                                     for (var i = 0, f; f = files[i]; i++) {
-                                                       if (!f.type.match('image.*')) {
+                                                        if (!f.type.match('image.*')) {
                                                             continue;
-                                                       }
-                                                       var reader = new FileReader();
-                                                       reader.onload = (function (theFile) {
-                                                        return function (e) {
-                                                            document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="600px" title="', escape(theFile.name), '"/>'].join('');
-                                                        };
-                                                       })(f);
-                                                       reader.readAsDataURL(f); 
+                                                        }
+                                                        var reader = new FileReader();
+                                                        reader.onload = (function (theFile) {
+                                                            return function (e) {
+                                                                document.getElementById("list").innerHTML = ['<img class="thumb thumbnail" src="',e.target.result, '" width="100%" title="', escape(theFile.name), '"/>'].join('');
+                                                            };
+                                                        })(f);
+                                                        reader.readAsDataURL(f); 
                                                     }
                                                 }
                                                 document.getElementById('file').addEventListener('change', archivo, false);
-                                            </script> 
+                                            </script>
+                                        </div>                                                 
+                                    </div>
 
-                                        </div>         
-                                    </div>     
-                            
-                                <div class="form-group">
-                                    <a href="" class="btn-fill-md radius-4 text-light bg-martini">Cancelar</a>
-                                    <button type="submit" class="btn-fill-md text-light bg-dark-pastel-green">Guardar</a>
-                                </div>
-                            
-                            </div>                            
+                                    <div class="form-group">
+                                        <a href="" class="btn-fill-md radius-4 text-light bg-martini">Cancelar</a>
+                                        <button type="submit" class="btn-fill-md text-light bg-dark-pastel-green">Guardar</a>
+                                    </div>
+                                </div>                        
+                                                          
                             </form>                             
                         </div>
                     </div>
